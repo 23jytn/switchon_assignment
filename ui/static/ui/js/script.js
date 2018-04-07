@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // initialize data
-    var initial_url = "http://localhost:3000/sensors?_page=1&_limit=100";
+    var initial_url = "http://localhost:8000/api/sensors?start=0&limit=20";
 
     var chart1 = null;
 
@@ -10,11 +10,12 @@ $(document).ready(function () {
         var temperature_data = [];
         var rh_data = [];
         var ah_data = [];
-        $.each(data, function (index, item) {
+        $.each(data, function (index, element) {
+            var item = element.fields;
             var timestamp = new Date(item.timestamp * 1000);
             temperature_data.push({
                 x: timestamp,
-                y: item.temprature
+                y: item.temperature
             });
 
             rh_data.push({
@@ -63,15 +64,16 @@ $(document).ready(function () {
     setInterval(function () {
 
         if (chart1 !== null && chart2 !== null) {
-            var updateUrl = "http://localhost:3000/sensors?_start=" + currentPage + "&_limit=1";
+            var updateUrl = "http://localhost:8000/api/sensors?start=" + currentPage + "&limit=1";
             currentPage++;
-            $.getJSON(updateUrl, function (data) {
+            $.getJSON(updateUrl, function (element) {
+                var data = element[0].fields;
                 var chart1Data = chart1.data.series[0].data;
                 chart1Data.shift();
 
                 chart1Data.push({
-                    x: new Date(data[0].timestamp * 1000),
-                    y: data[0].temprature
+                    x: new Date(data.timestamp * 1000),
+                    y: data.temperature
                 });
 
                 chart1.update();
@@ -80,8 +82,8 @@ $(document).ready(function () {
                 chart2Data.shift();
 
                 chart2Data.push({
-                    x: new Date(data[0].timestamp * 1000),
-                    y: data[0].relative_humidity
+                    x: new Date(data.timestamp * 1000),
+                    y: data.relative_humidity
                 });
 
                 chart2.update();

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,9 +79,16 @@ WSGI_APPLICATION = 'switchon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+           'ENGINE': 'djongo',
+           'NAME': 'switchondb',
+           'HOST': 'ds261078.mlab.com',
+           'PORT': 61078,
+           'USER': 'switchon',
+           'PASSWORD': 'switchon',
+           'AUTH_SOURCE': 'switchondb', 
+           'AUTH_MECHANISM': 'SCRAM-SHA-1'
+       }
+
 }
 
 
