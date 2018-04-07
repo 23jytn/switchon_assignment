@@ -1,0 +1,22 @@
+.chart-body {
+    height: 400px;
+}
+
+.temp-chart .ct-point {
+    stroke: blue;
+    stroke-width: 6px;
+}
+
+.temp-chart .ct-line {
+    stroke: green;
+    stroke-width: 2px;
+}
+
+.humidity-chart .ct-point {
+    stroke: orangered;
+    stroke-width: 6px;
+}
+
+.humidity-chart .ct-line {
+    stroke-width: 2px;
+}

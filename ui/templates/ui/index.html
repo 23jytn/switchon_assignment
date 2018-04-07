@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Demo project for switchon">
+  <meta name="author" content="Jyotindra Tiwari">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static "ui/css/style.css" %}">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="https://switchon.io/">SWITCHON.IO</a>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container my-5">
+    <div class="row py-5">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header font-weight-bold text-light bg-success">
+            Temperature Graph
+          </div>
+          <div class="card-body chart-body">
+            <div class="h-100 w-100 temp-chart">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header font-weight-bold text-light bg-success">
+            Humidity Graph
+          </div>
+          <div class="card-body chart-body">
+            <div class="h-100 w-100 humidity-chart">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  
+  {% load static %}
+  <script src="{% static "ui/js/script.js" %}"></script>
+</body>
+
+</html>
