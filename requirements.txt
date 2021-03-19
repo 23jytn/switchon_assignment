@@ -4,7 +4,7 @@ cycler==0.10.0
 dataclasses==0.5
 Django==2.0.4
 django-bootstrap3==9.1.0
-djangorestframework==3.8.1
+djangorestframework==3.11.2
 djongo==1.2.23
 idna==2.6
 Keras==2.1.5
